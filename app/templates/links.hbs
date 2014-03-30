@@ -1,6 +1,6 @@
 <p>links Template</p>
 {{#each}}
-  <a {{bind-attr href='url'}}>{{ name }}</a>
+  <a {{bind-attr href='absoluteUrl'}}>{{ name }}</a>
 {{/each}}
 <form>
   {{input value=name}}
