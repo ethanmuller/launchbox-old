@@ -6,7 +6,7 @@ module.exports = App.LinksController = Ember.ArrayController.extend
     newLink = @store.createRecord 'link',
       name: @get('name')
       url: @get('url')
-      ip: '0.0.0.0'
+      ip: window.IP
     newLink.save()
     @set('name', '')
     @set('url', '')
