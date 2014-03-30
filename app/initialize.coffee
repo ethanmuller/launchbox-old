@@ -1,6 +1,7 @@
 # ===== Config =====
 window.App = require 'config/app'
 require 'config/router'
+require 'config/store'
 
 # Load all modules in order automagically. Ember likes things to work this
 # way so everything is in the App.* namespace.
