@@ -1,6 +1,8 @@
-attr = FP.attr
+{ attr, hasMany } = FP
 
 module.exports = App.Box = FP.Model.extend
   ip: attr('string')
+
   id: attr('string')
-  links: FP.hasMany()
+
+  links: hasMany(embedded: false)
