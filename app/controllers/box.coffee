@@ -30,6 +30,6 @@ module.exports = App.BoxController = Ember.ObjectController.extend
 
   actions:
     emptyTrash: ->
-      links = 
+      self = this
       $.each @get('deletedLinks'), ->
-        self.get('links').removeObject(this)
+        this.delete()
