@@ -1,6 +1,6 @@
 <p>box Template</p>
 {{#each links}}
-  <div>{{ this.name }}</div>
+  <div><a {{bind-attr href=absoluteUrl }}>{{ name }}</a></div>
 {{/each}}
 <form>
   {{input type='text' value=name}}
