@@ -1,2 +1,2 @@
 module.exports = App.Router.map ->
-  this.resource('links', { path: '/' })
+  this.resource('box', { path: '/:box_id' })
