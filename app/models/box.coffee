@@ -5,4 +5,4 @@ module.exports = App.Box = FP.Model.extend
 
   id: attr('string')
 
-  links: hasMany(embedded: false)
+  links: hasMany()

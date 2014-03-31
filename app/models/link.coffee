@@ -7,8 +7,6 @@ module.exports = App.Link = FP.Model.extend
 
   softDeleted: attr('boolean', default: false)
 
-  box: hasOne(embedded: false)
-
   absoluteUrl: (->
     url = @get('url')
     return if Ember.isEmpty(url)

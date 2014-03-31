@@ -8,6 +8,8 @@ module.exports = App.BoxController = Ember.ObjectController.extend
     @get('links').filterBy('softDeleted', true)
   ).property('links.@each.softDeleted')
 
+
+
   createLink: ->
     box = @get('content')
 
@@ -18,9 +20,7 @@ module.exports = App.BoxController = Ember.ObjectController.extend
 
     # add new link reference to box
     box.get('links').pushObject(newLink)
-    box.save().then ->
-      # save record
-      newLink.save()
+    box.save()
 
     # clear inputs
     @set('name', '')
