@@ -1,4 +1,4 @@
-{ attr, hasOne } = FP
+attr = FP.attr
 
 module.exports = App.Link = FP.Model.extend
   name: attr('string')
@@ -8,8 +8,6 @@ module.exports = App.Link = FP.Model.extend
   id: attr('number')
 
   softDeleted: attr('boolean', default: false)
-
-  box: hasOne(embedded: false)
 
   absoluteUrl: (->
     url = @get('url')
