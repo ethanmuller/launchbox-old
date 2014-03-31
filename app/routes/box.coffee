@@ -12,5 +12,3 @@ module.exports = App.BoxRoute = Ember.Route.extend
           ip: ip
 
         newBox.save()
-
-
