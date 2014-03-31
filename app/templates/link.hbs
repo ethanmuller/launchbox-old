@@ -1,15 +1,16 @@
 {{#if isEditing}}
-  <form>
-    {{input value=name class="block block-isTextInput"}}
-    {{input value=url class="block block-isTextInput"}}
+  <div>
+    <form>
+      {{input value=name}}
+      {{input value=url}}
 
-    <button {{action 'delete'}}>
-      Delete
-    </button>
-  </form>
+      <button {{action 'delete'}}>
+        Delete
+      </button>
+    </form>
+  </div>
 {{else}}
-  <a {{bind-attr href="absoluteUrl"}}>
-    {{ name }} -
-    <em>{{ url }}</em>
-  </a>
+  <div>
+    <a {{bind-attr href=absoluteUrl}}>{{ name }}</a>
+  </div>
 {{/if}}

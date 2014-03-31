@@ -1,17 +1,17 @@
-<p>
+<div>
   {{#if isEditing}}
     <button {{ action cancelEdits }}>Cancel</button>
     <button {{ action saveEdits }}>Save</button>
   {{else}}
     <button {{ action edit }}>Edit</button>
   {{/if}}
-</p>
+</div>
 
-<p>
+<div>
   {{#each notDeletedLinks}}
     {{render 'link' this}}
   {{/each}}
-</p>
+</div>
 
 <form>
   {{input type='text' value=name}}
