@@ -1,4 +1,13 @@
 module.exports = App.BoxController = Ember.ObjectController.extend
+
+  notDeletedLinks: (->
+    @get('links').filterBy('softDeleted', false)
+  ).property('links.@each.softDeleted')
+
+  deletedLinks: (->
+    @get('links').filterBy('softDeleted', true)
+  ).property('links.@each.softDeleted')
+
   createLink: ->
     box = @get('content')
 
@@ -18,3 +27,9 @@ module.exports = App.BoxController = Ember.ObjectController.extend
     @set('url', '')
 
     return false
+
+  actions:
+    emptyTrash: ->
+      links = 
+      $.each @get('deletedLinks'), ->
+        self.get('links').removeObject(this)

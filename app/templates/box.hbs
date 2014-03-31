@@ -1,9 +1,11 @@
 <p>box Template</p>
 {{#each links}}
-  <div><a {{bind-attr href=absoluteUrl }}>{{ name }}</a></div>
+  {{render 'link' this}}
 {{/each}}
 <form>
   {{input type='text' value=name}}
   {{input type='text' value=url}}
   <button>Submit</button>
 </form>
+
+<button {{action 'emptyTrash'}}>Empty Trash</button>
