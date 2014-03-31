@@ -1,1 +1,15 @@
-<div><a {{bind-attr href=absoluteUrl }}>{{ name }}</a> <button {{action 'delete'}}>X</button></div>
+{{#if isEditing}}
+  <form>
+    {{input value=name class="block block-isTextInput"}}
+    {{input value=url class="block block-isTextInput"}}
+
+    <button {{action 'delete'}}>
+      Delete
+    </button>
+  </form>
+{{else}}
+  <a {{bind-attr href="absoluteUrl"}}>
+    {{ name }} -
+    <em>{{ url }}</em>
+  </a>
+{{/if}}

@@ -1,5 +1,7 @@
 module.exports = App.BoxController = Ember.ObjectController.extend
 
+  isEditing: false
+
   notDeletedLinks: (->
     @get('links').filterBy('softDeleted', false)
   ).property('links.@each.softDeleted')
@@ -7,8 +9,6 @@ module.exports = App.BoxController = Ember.ObjectController.extend
   deletedLinks: (->
     @get('links').filterBy('softDeleted', true)
   ).property('links.@each.softDeleted')
-
-
 
   createLink: ->
     box = @get('content')
@@ -30,6 +30,14 @@ module.exports = App.BoxController = Ember.ObjectController.extend
 
   actions:
     emptyTrash: ->
-      self = this
       $.each @get('deletedLinks'), ->
         this.delete()
+
+    edit: ->
+      @set('isEditing', true)
+
+    cancelEdits: ->
+      @set('isEditing', false)
+
+    saveEdits: ->
+      @set('isEditing', false)

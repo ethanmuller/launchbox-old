@@ -1,7 +1,18 @@
-<p>box Template</p>
-{{#each notDeletedLinks}}
-  {{render 'link' this}}
-{{/each}}
+<p>
+  {{#if isEditing}}
+    <button {{ action cancelEdits }}>Cancel</button>
+    <button {{ action saveEdits }}>Save</button>
+  {{else}}
+    <button {{ action edit }}>Edit</button>
+  {{/if}}
+</p>
+
+<p>
+  {{#each notDeletedLinks}}
+    {{render 'link' this}}
+  {{/each}}
+</p>
+
 <form>
   {{input type='text' value=name}}
   {{input type='text' value=url}}
