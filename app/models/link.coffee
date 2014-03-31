@@ -5,8 +5,6 @@ module.exports = App.Link = FP.Model.extend
 
   url: attr('string')
 
-  id: attr('number')
-
   softDeleted: attr('boolean', default: false)
 
   box: hasOne(embedded: false)
