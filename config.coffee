@@ -28,8 +28,6 @@ exports.config =
           "vendor/ember/#{environment}/ember-data.js"
           "vendor/ember/#{environment}/ember-model.js"
           # Anything else that depends on Ember
-          'vendor/scripts/ember-inflector.js'
-          'vendor/scripts/fireplace.js'
         ]
 
     stylesheets:
