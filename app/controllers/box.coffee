@@ -38,6 +38,17 @@ module.exports = App.BoxController = Ember.ObjectController.extend
 
     cancelEdits: ->
       @set('isEditing', false)
+      
+      # if links dirty
+        # confirm 'you sure?'
+          # reset stuff
+      # else
+        # reset stuff
 
     saveEdits: ->
+      links = @get('notDeletedLinks') # should only be saving dirty links
+      # We shouldn't have to do this.
+      # We should just be able to save all of these in one go...
+      $.each links, ->
+        this.save()
       @set('isEditing', false)

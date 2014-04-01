@@ -1,9 +1,9 @@
 <div>
   {{#if isEditing}}
-    <button {{ action cancelEdits }}>Cancel</button>
-    <button {{ action saveEdits }}>Save</button>
+    <button {{action 'cancelEdits'}}>Cancel</button>
+    <button {{action 'saveEdits'}}>Save</button>
   {{else}}
-    <button {{ action edit }}>Edit</button>
+    <button {{action 'edit'}}>Edit</button>
   {{/if}}
 </div>
 
