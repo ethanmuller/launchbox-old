@@ -1,8 +1,5 @@
-{ attr, hasMany } = FP
+{ attr, hasMany } = DS
 
-module.exports = App.Box = FP.Model.extend
+module.exports = App.Box = DS.Model.extend
   ip: attr('string')
-
-  id: attr('string')
-
-  links: hasMany()
+  links: hasMany('link')

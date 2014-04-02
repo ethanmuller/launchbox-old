@@ -1,19 +1,21 @@
-{ attr, hasOne } = FP
+{ attr, belongsTo } = DS
 
-module.exports = App.Link = FP.Model.extend
-  name: attr('string')
+module.exports = App.Link = DS.Model.extend()
+  # name: attr('string')
 
-  url: attr('string')
+  # url: attr('string')
 
-  softDeleted: attr('boolean', default: false)
+  # box: belongsTo('box')
 
-  absoluteUrl: (->
-    url = @get('url')
-    return if Ember.isEmpty(url)
-    uri = URI(url)
-    if uri.is('relative')
-      '//' + uri.toString()
-    else
-      uri.toString()
-  ).property('url')
+  # softDeleted: attr('boolean', default: false)
+
+  # absoluteUrl: (->
+    # url = @get('url')
+    # return if Ember.isEmpty(url)
+    # uri = URI(url)
+    # if uri.is('relative')
+      # '//' + uri.toString()
+    # else
+      # uri.toString()
+  # ).property('url')
 
