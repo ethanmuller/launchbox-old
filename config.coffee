@@ -28,6 +28,7 @@ exports.config =
           "vendor/ember/#{environment}/ember-data.js"
           "vendor/ember/#{environment}/ember-model.js"
           # Anything else that depends on Ember
+          'vendor/scripts/firebase.js'
           'vendor/scripts/emberfire.js'
         ]
 
