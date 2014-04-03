@@ -1,3 +1,8 @@
 module.exports = App.ApplicationController = Ember.ObjectController.extend
-  needs: 'session'
-  userIp: Ember.computed.alias('controllers.session.userIp')
+  userIp: null
+  getIp: (->
+    self = this
+    $.get('http://ip-api.com/json').then (res) ->
+      self.set('userIp', res.query)
+    ).property()
+

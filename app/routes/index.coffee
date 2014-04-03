@@ -1,3 +1,5 @@
 module.exports = App.IndexRoute = Ember.Route.extend
-  model: ->
-    ['one', 'two', 'three']
+  beforeModel: ->
+    sesh = @controllerFor('application')
+    sesh.get('getIp').then (appController) ->
+      key = appController.get('userIp').replace(/\./g, ',')
