@@ -1,3 +1,5 @@
 module.exports = App.BoxRoute = Ember.Route.extend
   model:  ->
-    @store.find('box')
+    @store.createRecord 'box',
+      id: 'asdf'
+      ip: 'buttcheeks'
