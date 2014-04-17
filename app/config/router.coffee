@@ -1,2 +1,2 @@
 module.exports = App.Router.map ->
-  @resource('box', path: '/box')
+  @resource('box', path: '/')
