@@ -2,8 +2,20 @@ module.exports = App.BoxController = Ember.ObjectController.extend
   createLink: ->
     return unless @get('isValid')
 
-    console.log @get('name')
-    console.log @get('url')
+    box = @get('content')
+
+    newLink = @store.createRecord 'link', 
+      name: @get('name')
+      url: @get('url')
+
+    box.get('links').addObject(newLink)
+    box.save()
+
+    @set('name', '')
+    @set('url', '')
+
+    console.log 'saved'
+    console.log newLink
 
   isValid: (->
     name = @get('name')
