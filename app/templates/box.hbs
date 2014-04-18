@@ -1,5 +1,26 @@
-box template
+<div>
+  box for {{ip}}
+</div>
+
+{{!--
+<div>
+  {{#if isEditing}}
+    <button {{action 'cancelEdits'}}>Cancel</button>
+    <button {{action 'saveEdits'}}>Save</button>
+  {{else}}
+    <button {{action 'edit'}}>Edit</button>
+  {{/if}}
+</div>
 
 <div>
-  box IP: {{ip}}
+  {{#each notDeletedLinks}}
+    {{render 'link' this}}
+  {{/each}}
 </div>
+--}}
+
+<form>
+  {{input type='text' value=name}}
+  {{input type='text' value=url}}
+  <button>Submit</button>
+</form>

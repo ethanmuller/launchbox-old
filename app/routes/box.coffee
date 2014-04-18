@@ -1,6 +1,7 @@
 module.exports = App.BoxRoute = Ember.Route.extend
   model:  ->
     self = this
+    console.log 'here we go'
     @controllerFor('application').get('getIp').then (app) ->
       success = (box) ->
         console.log 'getting existing box'
