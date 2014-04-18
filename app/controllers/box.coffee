@@ -8,8 +8,11 @@ module.exports = App.BoxController = Ember.ObjectController.extend
       name: @get('name')
       url: @get('url')
 
+    # add to box
     box.get('links').addObject(newLink)
     box.save()
+
+    newLink.save()
 
     @set('name', '')
     @set('url', '')
