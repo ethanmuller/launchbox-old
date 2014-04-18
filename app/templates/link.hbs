@@ -1,4 +1,17 @@
-<a {{bind-attr href=absoluteUrl class=':link--root'}}>
-  <div class="link--main sp_sm">{{ name }}</div>
-  <div class="link--sub">{{ url }}</div>
-</a>
+{{#if isEditing}}
+<div class="pad">
+  <form>
+    <div class="sp">
+      {{input type='text' class='big' value=name placeholder='Name'}}
+    </div>
+    <div>
+      {{input type='text' value=url placeholder='URL'}}
+    </div>
+  </form>
+</div>
+{{else}}
+  <a {{bind-attr href=absoluteUrl class=':link--root'}}>
+    <div class="link--main sp_sm">{{ name }}</div>
+    <div class="link--sub">{{ url }}</div>
+  </a>
+{{/if}}

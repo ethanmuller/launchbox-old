@@ -1,4 +1,6 @@
 module.exports = App.BoxController = Ember.ObjectController.extend
+  isEditing: false
+
   createLink: ->
     return unless @get('isValid')
 
@@ -29,3 +31,23 @@ module.exports = App.BoxController = Ember.ObjectController.extend
   isInvalid: (->
     !@get('isValid')
   ).property('isValid')
+
+  actions:
+    edit: ->
+      @set('isEditing', true)
+      false
+
+    cancelEdits: ->
+      links = @get('content').get('links')
+      if links.anyBy('isDirty')
+        if confirm('You sure, hoss?')
+          links.invoke('rollback')
+          @toggleProperty('isEditing')
+      else
+        @toggleProperty('isEditing')
+      false
+
+    saveEdits: ->
+      @get('content').get('links').filterBy('isDirty').invoke('save')
+      @toggleProperty('isEditing')
+      false

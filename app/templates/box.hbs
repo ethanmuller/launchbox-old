@@ -1,32 +1,34 @@
-{{!--
-<div>
+<div class="sp_sm float-clear">
   {{#if isEditing}}
-    <button {{action 'cancelEdits'}}>Cancel</button>
-    <button {{action 'saveEdits'}}>Save</button>
+    <button {{action 'cancelEdits'}} class="btn alt small inline l">Cancel</button>
+    <button {{action 'saveEdits'}} class="btn small inline positive r">Save</button>
   {{else}}
-    <button {{action 'edit'}}>Edit</button>
+    <button {{action 'edit'}} class="btn alt inline small r">Edit</button>
   {{/if}}
 </div>
---}}
 
-<ol>
+<ol class="float-clear">
   {{#each links}}
-  <li class="chunky-box">
-  {{render 'link' this}}
-  </li>
+    <li class="chunky-box">
+      {{render 'link' this}}
+    </li>
   {{/each}}
 </ol>
 
-<div class="chunky-box last pad">
-  <form>
-    <div class="sp">
-      {{input type='text' class='big' value=name placeholder='Name'}}
+{{#unless isEditing}}
+  <div class="float-clear">
+    <div class="chunky-box last pad">
+      <form>
+        <div class="sp">
+          {{input type='text' class='big' value=name placeholder='Name'}}
+        </div>
+        <div class="sp">
+          {{input type='text' value=url placeholder='URL'}}
+        </div>
+        <div>
+          <button {{bind-attr disabled=isInvalid class=':btn'}}>Submit</button>
+        </div>
+      </form>
     </div>
-    <div class="sp">
-      {{input type='text' value=url placeholder='URL'}}
-    </div>
-    <div>
-      <button {{bind-attr disabled=isInvalid class=':btn'}}>Submit</button>
-    </div>
-  </form>
-</div>
+  </div>
+{{/unless}}
