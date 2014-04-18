@@ -1,4 +1,4 @@
-<div>
+<div class="sp">
   box for {{ip}}
 </div>
 
@@ -20,7 +20,13 @@
 --}}
 
 <form>
-  {{input type='text' value=name}}
-  {{input type='text' value=url}}
-  <button>Submit</button>
+  <div class="sp">
+    {{input type='text' class='big' value=name placeholder='Name'}}
+  </div>
+  <div class="sp">
+    {{input type='text' value=url placeholder='URL'}}
+  </div>
+  <div class="sp">
+    <button class="btn">Submit</button>
+  </div>
 </form>

@@ -1,0 +1,32 @@
+@import 'general-variables'
+
+input[type='text']
+  display: block
+
+  font-size: 1em
+  &.big
+    font-size: 1.5em
+
+  font-weight: bold
+
+  padding: sp;
+
+  border: border_sm solid
+  color: c-dark
+
+  width: 100%
+  box-sizing: border-box
+
+  font-family: font-stack
+
+  // transition focus
+  transition: box-shadow 0.2s
+
+::-webkit-input-placeholder
+  placeholder-styles()
+::-moz-placeholder
+  placeholder-styles()
+:-ms-input-placeholder
+  placeholder-styles()
+input:-moz-placeholder
+  placeholder-styles()

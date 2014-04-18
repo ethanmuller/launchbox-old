@@ -1,0 +1,39 @@
+@import 'general-variables'
+
+.btn
+  display: block
+  -webkit-appearance: none
+  width: 100%
+  box-sizing: border-box
+
+  cursor: pointer
+
+  padding: sp
+
+  font-weight: bold;
+  text-transform: uppercase
+
+  border: none
+  background-color: c-dark
+  color: white
+
+  // transition focus
+  transition: all quick
+
+  &:hover
+    background: c-dark - 10%
+
+  &.alt
+    background: transparent
+    color: c-dark
+    border: border_sm solid c-dark
+    &:hover
+      background: c-light
+
+  &.inline
+    display: inline-block
+    width: auto
+
+  &[disabled]
+    opacity: 0.5
+    color: c-mid
