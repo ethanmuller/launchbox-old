@@ -22,6 +22,10 @@ input[type='text']
   // transition focus
   transition: box-shadow 0.2s
 
+  outline: none
+  &:focus
+    box-shadow: 0 0 0 border_lg c-light
+
 ::-webkit-input-placeholder
   placeholder-styles()
 ::-moz-placeholder

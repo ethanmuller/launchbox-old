@@ -12,8 +12,10 @@
 
   font-weight: bold;
   text-transform: uppercase
+  letter-spacing: 0.05em
 
-  border: none
+  border: border_sm solid c-dark
+
   background-color: c-dark
   color: white
 
@@ -22,10 +24,9 @@
 
   transform: translate3d(0, 0, 0)
 
-  &.alt
-    background: transparent
-    color: c-dark
-    border: border_sm solid c-dark
+  outline: none
+  &:focus
+    box-shadow: 0 0 0 border_lg c-light
 
   &.inline
     display: inline-block
@@ -33,4 +34,12 @@
 
   &[disabled]
     opacity: 0.5
-    color: c-mid
+    background: transparent
+    color: c-dark
+    border: border_sm solid c-dark
+
+  &.alt
+    background: transparent
+    color: c-dark
+    border: border_sm solid c-dark
+

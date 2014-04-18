@@ -13,20 +13,24 @@
 </div>
 --}}
 
-<div class="sp_lg">
+<ol>
   {{#each links}}
-    {{render 'link' this}}
+  <li class="chunky-box">
+  {{render 'link' this}}
+  </li>
   {{/each}}
-</div>
+</ol>
 
-<form>
-  <div class="sp">
-    {{input type='text' class='big' value=name placeholder='Name'}}
-  </div>
-  <div class="sp">
-    {{input type='text' value=url placeholder='URL'}}
-  </div>
-  <div class="sp">
-    <button {{bind-attr disabled=isInvalid class=':btn'}}>Submit</button>
-  </div>
-</form>
+<div class="chunky-box last pad">
+  <form>
+    <div class="sp">
+      {{input type='text' class='big' value=name placeholder='Name'}}
+    </div>
+    <div class="sp">
+      {{input type='text' value=url placeholder='URL'}}
+    </div>
+    <div>
+      <button {{bind-attr disabled=isInvalid class=':btn'}}>Submit</button>
+    </div>
+  </form>
+</div>
