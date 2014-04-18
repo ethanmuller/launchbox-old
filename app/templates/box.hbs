@@ -27,6 +27,6 @@
     {{input type='text' value=url placeholder='URL'}}
   </div>
   <div class="sp">
-    <button class="btn">Submit</button>
+    <button {{bind-attr disabled=isInvalid class=':btn'}}>Submit</button>
   </div>
 </form>

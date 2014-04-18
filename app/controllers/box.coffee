@@ -10,3 +10,7 @@ module.exports = App.BoxController = Ember.ObjectController.extend
     url = @get('url')
     !Ember.isEmpty($.trim(name)) and !Ember.isEmpty($.trim(url))
   ).property('name', 'url')
+
+  isInvalid: (->
+    !@get('isValid')
+  ).property('isValid')
