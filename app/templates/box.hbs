@@ -20,12 +20,12 @@
 {{#unless isEditing}}
   <div class="float-clear">
     <div class="chunky-box last pad">
-      <form>
+      <form novalidate>
         <div class="sp">
           {{input type='text' value=name placeholder='Name'}}
         </div>
         <div class="sp">
-          {{input type='text' value=url placeholder='URL'}}
+          {{input type='url' value=url placeholder='URL'}}
         </div>
         <div>
           <button {{bind-attr disabled=isInvalid class=':btn'}}>Submit</button>
