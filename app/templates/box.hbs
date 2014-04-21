@@ -1,11 +1,13 @@
-<div class="sp_sm float-clear">
-  {{#if isEditing}}
+{{#if isEditing}}
+  <div class="sp float-clear">
     <button {{action 'cancelEdits'}} class="btn alt small inline l">Cancel</button>
     <button {{action 'saveEdits'}} class="btn small inline positive r">Save</button>
-  {{else}}
-    <button {{action 'edit'}} class="btn alt inline small r">Edit</button>
-  {{/if}}
+  </div>
+{{else}}
+<div class="clearfix sp">
+  <button {{action 'edit'}} class="btn alt inline small r">Edit</button>
 </div>
+{{/if}}
 
 <ol class="float-clear">
   {{#each links}}
@@ -23,7 +25,7 @@
           {{input type='text' value=name placeholder='Name'}}
         </div>
         <div class="sp">
-          {{input type='text' value=url placeholder='URL'}}
+          <input type="url" placeholder="URL" {{bind-attr value=url}} />
         </div>
         <div>
           <button {{bind-attr disabled=isInvalid class=':btn'}}>Submit</button>
