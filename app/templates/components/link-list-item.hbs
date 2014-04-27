@@ -1,0 +1,17 @@
+{{#if isEditing}}
+<div class="pad">
+  <form novalidate>
+    <div class="sp">
+      {{input type='text' value=model.name placeholder='Name'}}
+    </div>
+    <div>
+      {{input type='text' value=model.url placeholder='URL'}}
+    </div>
+  </form>
+</div>
+{{else}}
+  <a {{bind-attr href=model.absoluteUrl}} class='link--root'>
+    <div class="link--main sp_sm">{{ model.name }}</div>
+    <div class="link--sub">{{ model.url }}</div>
+  </a>
+{{/if}}

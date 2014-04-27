@@ -10,9 +10,9 @@
 {{/if}}
 
 <ol class="float-clear">
-  {{#each links}}
+  {{#each l in myLinks}}
     <li class="chunky-box">
-      {{render 'link' this}}
+      {{link-list-item model=l.link isLast=l.isLast isEditing=isEditing}}
     </li>
   {{/each}}
 </ol>

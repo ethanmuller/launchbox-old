@@ -1,6 +1,16 @@
 module.exports = App.BoxController = Ember.ObjectController.extend
   isEditing: false
 
+  date: (->
+    (new Date).toString()
+  ).property().cacheable(false)
+
+  myLinks: (->
+    @get('links').map (link, index) =>
+      link: link
+      isLast: index is (@get('links.length') - 1)
+  ).property('links.@each')
+
   createLink: ->
     return unless @get('isValid')
 
