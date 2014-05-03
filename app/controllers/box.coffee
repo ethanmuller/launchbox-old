@@ -5,10 +5,14 @@ module.exports = App.BoxController = Ember.ObjectController.extend
     (new Date).toString()
   ).property().cacheable(false)
 
+  notDeletedLinks: (->
+    @get('links').filterBy('softDeleted', false)
+  ).property('links.@each.softDeleted')
+
   myLinks: (->
-    @get('links').map (link, index) =>
+    @get('notDeletedLinks').map (link, index) =>
       link: link
-      isLast: index is (@get('links.length') - 1)
+      isLast: index is (@get('notDeletedLinks.length') - 1)
   ).property('links.@each')
 
   createLink: ->
