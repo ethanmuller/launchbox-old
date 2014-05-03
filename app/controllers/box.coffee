@@ -13,7 +13,7 @@ module.exports = App.BoxController = Ember.ObjectController.extend
     @get('notDeletedLinks').map (link, index) =>
       link: link
       isLast: index is (@get('notDeletedLinks.length') - 1)
-  ).property('links.@each')
+  ).property('notDeletedLinks')
 
   createLink: ->
     return unless @get('isValid')
@@ -46,6 +46,10 @@ module.exports = App.BoxController = Ember.ObjectController.extend
     !@get('isValid')
   ).property('isValid')
 
+  isEditable: (->
+    @get('notDeletedLinks.length') > 0 and not @get('isEditing')
+  ).property('notDeletedLinks', 'isEditing')
+
   actions:
     edit: ->
       @set('isEditing', true)
@@ -54,7 +58,7 @@ module.exports = App.BoxController = Ember.ObjectController.extend
     cancelEdits: ->
       links = @get('content').get('links')
       if links.anyBy('isDirty')
-        if confirm('You sure, hoss?')
+        if confirm("You've made some changes. Are you sure you want to discard them?")
           links.invoke('rollback')
           @toggleProperty('isEditing')
       else

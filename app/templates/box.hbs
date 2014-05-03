@@ -1,18 +1,25 @@
 {{#if isEditing}}
   <div class="sp float-clear">
-    <button {{action 'cancelEdits'}} class="btn alt small inline l">Cancel</button>
-    <button {{action 'saveEdits'}} class="btn small inline positive r">Save</button>
+    <div class="l-half with-margin">
+      <button {{action 'cancelEdits'}} class="btn alt sm l">Cancel</button>
+    </div>
+
+    <div class="l-half with-margin">
+      <button {{action 'saveEdits'}} class="btn sm positive r">Save</button>
+    </div>
   </div>
-{{else}}
-<div class="clearfix sp">
-  <button {{action 'edit'}} class="btn alt inline small r">Edit</button>
-</div>
 {{/if}}
+
+{{#if isEditable}}
+  <div class="clearfix sp">
+    <button {{action 'edit'}} class="btn alt inline sm r">Edit</button>
+  </div>
+{{/if }}
 
 <ol class="float-clear">
   {{#each l in myLinks}}
-    <li class="chunky-box">
-      {{link-list-item model=l.link isLast=l.isLast isEditing=isEditing}}
+    <li {{bind-attr class='l.isLast:last l.isLast:sp_lg :chunky-box'}}>
+      {{link-list-item model=l.link isEditing=isEditing}}
     </li>
   {{/each}}
 </ol>

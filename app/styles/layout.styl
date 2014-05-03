@@ -1,5 +1,7 @@
 @import 'global'
 
+margin = 2%
+
 .page
   width: 95%
   max-width: 40em
@@ -14,3 +16,15 @@
 
 .r
   float: right
+
+.l-half
+  width: 50%
+  float: left
+
+  &.with-margin
+    width:  (50% - margin)
+    &:nth-child(even)
+      float: right
+
+  &:nth-child(odd)
+    clear: both

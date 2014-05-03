@@ -1,10 +1,6 @@
 {{#if isEditing}}
 <div class="pad clearfix">
-  {{#if model.softDeleted}}
-    <button {{action 'toggleDeleted'}} class="btn small alt inline l sp">Undelete</button>
-  {{else}}
-    <button {{action 'toggleDeleted'}} class="btn small inline negative r sp">Delete</button>
-  {{/if}}
+  <button {{action 'toggleDeleted'}} class="btn xs inline negative r sp">Delete</button>
 
 
   <form novalidate>
