@@ -14,7 +14,7 @@
 </div>
 {{else}}
   <a {{bind-attr href=model.absoluteUrl}} class='link--root'>
-    <div class="link--main sp_sm">{{ model.name }}</div>
-    <div class="link--sub">{{ model.url }}</div>
+    <div class="link--main sp_sm tx-trim">{{ model.name }}</div>
+    <div class="link--sub tx-trim">{{ model.url }}</div>
   </a>
 {{/if}}
