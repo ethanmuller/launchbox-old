@@ -1,10 +1,6 @@
 module.exports = App.BoxController = Ember.ObjectController.extend
   isEditing: false
 
-  date: (->
-    (new Date).toString()
-  ).property().cacheable(false)
-
   notDeletedLinks: (->
     @get('links').filterBy('softDeleted', false)
   ).property('links.@each.softDeleted')
