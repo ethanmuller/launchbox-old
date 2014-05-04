@@ -1,6 +1,9 @@
 {{#if isEditing}}
 <div class="pad clearfix">
-  <button {{action 'toggleDeleted'}} class="btn xs inline negative r sp">Delete</button>
+
+  <div class="link--controls">
+    <button {{action 'toggleDeleted'}} class="btn xs negative r sp">Delete</button>
+  </div>
 
 
   <form novalidate>

@@ -1,12 +1,7 @@
 {{#if isEditing}}
-  <div class="sp float-clear">
-    <div class="l-half with-margin">
-      <button {{action 'cancelEdits'}} class="btn alt sm l">Cancel</button>
-    </div>
-
-    <div class="l-half with-margin">
-      <button {{action 'saveEdits'}} class="btn sm positive r">Save</button>
-    </div>
+  <div class="sp r">
+    <button {{action 'cancelEdits'}} class="btn alt sm inline l">Cancel</button>
+    <button {{action 'saveEdits'}} class="btn sm positive inline l sp_left">Save</button>
   </div>
 {{/if}}
 
